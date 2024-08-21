@@ -33,10 +33,10 @@ MOVE          = mv -f
 TAR           = tar -cf
 COMPRESS      = gzip -9f
 DISTNAME      = client1.0.0
-DISTDIR = /mnt/hgfs/share/parking/entrance/.tmp/client1.0.0
+DISTDIR = /mnt/hgfs/share/entrance/.tmp/client1.0.0
 LINK          = arm-linux-g++
 LFLAGS        = -Wl,-O1 -Wl,-rpath,/usr/local/Qt-Embedded-5.7.0/lib
-LIBS          = $(SUBLIBS) -L. -ljpeg -L/usr/local/Qt-Embedded-5.7.0/lib -lQt5Widgets -lQt5Gui -lQt5Network -lQt5SerialPort -lQt5Core -lGLESv2 -lpthread 
+LIBS          = $(SUBLIBS) -L./include -ljpeg -L/usr/local/Qt-Embedded-5.7.0/lib -lQt5Widgets -lQt5Gui -lQt5Network -lQt5SerialPort -lQt5Core -lGLESv2 -lpthread 
 AR            = arm-linux-ar cqs
 RANLIB        = 
 SED           = sed
@@ -573,7 +573,7 @@ moc_TcpClient.cpp: /usr/local/Qt-Embedded-5.7.0/include/QtCore/QObject \
 		/usr/local/Qt-Embedded-5.7.0/include/QtCore/qjsonobject.h \
 		TcpClient.h \
 		/usr/local/Qt-Embedded-5.7.0/bin/moc
-	/usr/local/Qt-Embedded-5.7.0/bin/moc $(DEFINES) -I/usr/local/Qt-Embedded-5.7.0/mkspecs/linux-arm-gnueabi-g++ -I/mnt/hgfs/share/parking/entrance -I/mnt/hgfs/share/parking/entrance/include -I/usr/local/Qt-Embedded-5.7.0/include -I/usr/local/Qt-Embedded-5.7.0/include/QtWidgets -I/usr/local/Qt-Embedded-5.7.0/include/QtGui -I/usr/local/Qt-Embedded-5.7.0/include/QtNetwork -I/usr/local/Qt-Embedded-5.7.0/include/QtSerialPort -I/usr/local/Qt-Embedded-5.7.0/include/QtCore -I/usr/local/arm/5.4.0/usr/arm-none-linux-gnueabi/include/c++/5.4.0 -I/usr/local/arm/5.4.0/usr/arm-none-linux-gnueabi/include/c++/5.4.0/arm-none-linux-gnueabi -I/usr/local/arm/5.4.0/usr/arm-none-linux-gnueabi/include/c++/5.4.0/backward -I/usr/local/arm/5.4.0/usr/lib/gcc/arm-none-linux-gnueabi/5.4.0/include -I/usr/local/arm/5.4.0/usr/lib/gcc/arm-none-linux-gnueabi/5.4.0/include-fixed -I/usr/local/arm/5.4.0/usr/arm-none-linux-gnueabi/include -I/usr/local/arm/5.4.0/usr/arm-none-linux-gnueabi/sysroot/usr/include TcpClient.h -o moc_TcpClient.cpp
+	/usr/local/Qt-Embedded-5.7.0/bin/moc $(DEFINES) -I/usr/local/Qt-Embedded-5.7.0/mkspecs/linux-arm-gnueabi-g++ -I/mnt/hgfs/share/entrance -I/mnt/hgfs/share/entrance/include -I/usr/local/Qt-Embedded-5.7.0/include -I/usr/local/Qt-Embedded-5.7.0/include/QtWidgets -I/usr/local/Qt-Embedded-5.7.0/include/QtGui -I/usr/local/Qt-Embedded-5.7.0/include/QtNetwork -I/usr/local/Qt-Embedded-5.7.0/include/QtSerialPort -I/usr/local/Qt-Embedded-5.7.0/include/QtCore -I/usr/local/arm/5.4.0/usr/arm-none-linux-gnueabi/include/c++/5.4.0 -I/usr/local/arm/5.4.0/usr/arm-none-linux-gnueabi/include/c++/5.4.0/arm-none-linux-gnueabi -I/usr/local/arm/5.4.0/usr/arm-none-linux-gnueabi/include/c++/5.4.0/backward -I/usr/local/arm/5.4.0/usr/lib/gcc/arm-none-linux-gnueabi/5.4.0/include -I/usr/local/arm/5.4.0/usr/lib/gcc/arm-none-linux-gnueabi/5.4.0/include-fixed -I/usr/local/arm/5.4.0/usr/arm-none-linux-gnueabi/include -I/usr/local/arm/5.4.0/usr/arm-none-linux-gnueabi/sysroot/usr/include TcpClient.h -o moc_TcpClient.cpp
 
 moc_httpcar.cpp: http_client.hpp \
 		/usr/local/Qt-Embedded-5.7.0/include/QtCore/QDebug \
@@ -681,7 +681,7 @@ moc_httpcar.cpp: http_client.hpp \
 		/usr/local/Qt-Embedded-5.7.0/include/QtCore/QJsonParseError \
 		httpcar.h \
 		/usr/local/Qt-Embedded-5.7.0/bin/moc
-	/usr/local/Qt-Embedded-5.7.0/bin/moc $(DEFINES) -I/usr/local/Qt-Embedded-5.7.0/mkspecs/linux-arm-gnueabi-g++ -I/mnt/hgfs/share/parking/entrance -I/mnt/hgfs/share/parking/entrance/include -I/usr/local/Qt-Embedded-5.7.0/include -I/usr/local/Qt-Embedded-5.7.0/include/QtWidgets -I/usr/local/Qt-Embedded-5.7.0/include/QtGui -I/usr/local/Qt-Embedded-5.7.0/include/QtNetwork -I/usr/local/Qt-Embedded-5.7.0/include/QtSerialPort -I/usr/local/Qt-Embedded-5.7.0/include/QtCore -I/usr/local/arm/5.4.0/usr/arm-none-linux-gnueabi/include/c++/5.4.0 -I/usr/local/arm/5.4.0/usr/arm-none-linux-gnueabi/include/c++/5.4.0/arm-none-linux-gnueabi -I/usr/local/arm/5.4.0/usr/arm-none-linux-gnueabi/include/c++/5.4.0/backward -I/usr/local/arm/5.4.0/usr/lib/gcc/arm-none-linux-gnueabi/5.4.0/include -I/usr/local/arm/5.4.0/usr/lib/gcc/arm-none-linux-gnueabi/5.4.0/include-fixed -I/usr/local/arm/5.4.0/usr/arm-none-linux-gnueabi/include -I/usr/local/arm/5.4.0/usr/arm-none-linux-gnueabi/sysroot/usr/include httpcar.h -o moc_httpcar.cpp
+	/usr/local/Qt-Embedded-5.7.0/bin/moc $(DEFINES) -I/usr/local/Qt-Embedded-5.7.0/mkspecs/linux-arm-gnueabi-g++ -I/mnt/hgfs/share/entrance -I/mnt/hgfs/share/entrance/include -I/usr/local/Qt-Embedded-5.7.0/include -I/usr/local/Qt-Embedded-5.7.0/include/QtWidgets -I/usr/local/Qt-Embedded-5.7.0/include/QtGui -I/usr/local/Qt-Embedded-5.7.0/include/QtNetwork -I/usr/local/Qt-Embedded-5.7.0/include/QtSerialPort -I/usr/local/Qt-Embedded-5.7.0/include/QtCore -I/usr/local/arm/5.4.0/usr/arm-none-linux-gnueabi/include/c++/5.4.0 -I/usr/local/arm/5.4.0/usr/arm-none-linux-gnueabi/include/c++/5.4.0/arm-none-linux-gnueabi -I/usr/local/arm/5.4.0/usr/arm-none-linux-gnueabi/include/c++/5.4.0/backward -I/usr/local/arm/5.4.0/usr/lib/gcc/arm-none-linux-gnueabi/5.4.0/include -I/usr/local/arm/5.4.0/usr/lib/gcc/arm-none-linux-gnueabi/5.4.0/include-fixed -I/usr/local/arm/5.4.0/usr/arm-none-linux-gnueabi/include -I/usr/local/arm/5.4.0/usr/arm-none-linux-gnueabi/sysroot/usr/include httpcar.h -o moc_httpcar.cpp
 
 moc_httpweather.cpp: /usr/local/Qt-Embedded-5.7.0/include/QtCore/QObject \
 		/usr/local/Qt-Embedded-5.7.0/include/QtCore/qobject.h \
@@ -775,7 +775,7 @@ moc_httpweather.cpp: /usr/local/Qt-Embedded-5.7.0/include/QtCore/QObject \
 		/usr/local/Qt-Embedded-5.7.0/include/QtCore/qurlquery.h \
 		httpweather.h \
 		/usr/local/Qt-Embedded-5.7.0/bin/moc
-	/usr/local/Qt-Embedded-5.7.0/bin/moc $(DEFINES) -I/usr/local/Qt-Embedded-5.7.0/mkspecs/linux-arm-gnueabi-g++ -I/mnt/hgfs/share/parking/entrance -I/mnt/hgfs/share/parking/entrance/include -I/usr/local/Qt-Embedded-5.7.0/include -I/usr/local/Qt-Embedded-5.7.0/include/QtWidgets -I/usr/local/Qt-Embedded-5.7.0/include/QtGui -I/usr/local/Qt-Embedded-5.7.0/include/QtNetwork -I/usr/local/Qt-Embedded-5.7.0/include/QtSerialPort -I/usr/local/Qt-Embedded-5.7.0/include/QtCore -I/usr/local/arm/5.4.0/usr/arm-none-linux-gnueabi/include/c++/5.4.0 -I/usr/local/arm/5.4.0/usr/arm-none-linux-gnueabi/include/c++/5.4.0/arm-none-linux-gnueabi -I/usr/local/arm/5.4.0/usr/arm-none-linux-gnueabi/include/c++/5.4.0/backward -I/usr/local/arm/5.4.0/usr/lib/gcc/arm-none-linux-gnueabi/5.4.0/include -I/usr/local/arm/5.4.0/usr/lib/gcc/arm-none-linux-gnueabi/5.4.0/include-fixed -I/usr/local/arm/5.4.0/usr/arm-none-linux-gnueabi/include -I/usr/local/arm/5.4.0/usr/arm-none-linux-gnueabi/sysroot/usr/include httpweather.h -o moc_httpweather.cpp
+	/usr/local/Qt-Embedded-5.7.0/bin/moc $(DEFINES) -I/usr/local/Qt-Embedded-5.7.0/mkspecs/linux-arm-gnueabi-g++ -I/mnt/hgfs/share/entrance -I/mnt/hgfs/share/entrance/include -I/usr/local/Qt-Embedded-5.7.0/include -I/usr/local/Qt-Embedded-5.7.0/include/QtWidgets -I/usr/local/Qt-Embedded-5.7.0/include/QtGui -I/usr/local/Qt-Embedded-5.7.0/include/QtNetwork -I/usr/local/Qt-Embedded-5.7.0/include/QtSerialPort -I/usr/local/Qt-Embedded-5.7.0/include/QtCore -I/usr/local/arm/5.4.0/usr/arm-none-linux-gnueabi/include/c++/5.4.0 -I/usr/local/arm/5.4.0/usr/arm-none-linux-gnueabi/include/c++/5.4.0/arm-none-linux-gnueabi -I/usr/local/arm/5.4.0/usr/arm-none-linux-gnueabi/include/c++/5.4.0/backward -I/usr/local/arm/5.4.0/usr/lib/gcc/arm-none-linux-gnueabi/5.4.0/include -I/usr/local/arm/5.4.0/usr/lib/gcc/arm-none-linux-gnueabi/5.4.0/include-fixed -I/usr/local/arm/5.4.0/usr/arm-none-linux-gnueabi/include -I/usr/local/arm/5.4.0/usr/arm-none-linux-gnueabi/sysroot/usr/include httpweather.h -o moc_httpweather.cpp
 
 moc_mainwindow.cpp: /usr/local/Qt-Embedded-5.7.0/include/QtWidgets/QMainWindow \
 		/usr/local/Qt-Embedded-5.7.0/include/QtWidgets/qmainwindow.h \
@@ -937,7 +937,7 @@ moc_mainwindow.cpp: /usr/local/Qt-Embedded-5.7.0/include/QtWidgets/QMainWindow \
 		/usr/local/Qt-Embedded-5.7.0/include/QtCore/qlinkedlist.h \
 		mainwindow.h \
 		/usr/local/Qt-Embedded-5.7.0/bin/moc
-	/usr/local/Qt-Embedded-5.7.0/bin/moc $(DEFINES) -I/usr/local/Qt-Embedded-5.7.0/mkspecs/linux-arm-gnueabi-g++ -I/mnt/hgfs/share/parking/entrance -I/mnt/hgfs/share/parking/entrance/include -I/usr/local/Qt-Embedded-5.7.0/include -I/usr/local/Qt-Embedded-5.7.0/include/QtWidgets -I/usr/local/Qt-Embedded-5.7.0/include/QtGui -I/usr/local/Qt-Embedded-5.7.0/include/QtNetwork -I/usr/local/Qt-Embedded-5.7.0/include/QtSerialPort -I/usr/local/Qt-Embedded-5.7.0/include/QtCore -I/usr/local/arm/5.4.0/usr/arm-none-linux-gnueabi/include/c++/5.4.0 -I/usr/local/arm/5.4.0/usr/arm-none-linux-gnueabi/include/c++/5.4.0/arm-none-linux-gnueabi -I/usr/local/arm/5.4.0/usr/arm-none-linux-gnueabi/include/c++/5.4.0/backward -I/usr/local/arm/5.4.0/usr/lib/gcc/arm-none-linux-gnueabi/5.4.0/include -I/usr/local/arm/5.4.0/usr/lib/gcc/arm-none-linux-gnueabi/5.4.0/include-fixed -I/usr/local/arm/5.4.0/usr/arm-none-linux-gnueabi/include -I/usr/local/arm/5.4.0/usr/arm-none-linux-gnueabi/sysroot/usr/include mainwindow.h -o moc_mainwindow.cpp
+	/usr/local/Qt-Embedded-5.7.0/bin/moc $(DEFINES) -I/usr/local/Qt-Embedded-5.7.0/mkspecs/linux-arm-gnueabi-g++ -I/mnt/hgfs/share/entrance -I/mnt/hgfs/share/entrance/include -I/usr/local/Qt-Embedded-5.7.0/include -I/usr/local/Qt-Embedded-5.7.0/include/QtWidgets -I/usr/local/Qt-Embedded-5.7.0/include/QtGui -I/usr/local/Qt-Embedded-5.7.0/include/QtNetwork -I/usr/local/Qt-Embedded-5.7.0/include/QtSerialPort -I/usr/local/Qt-Embedded-5.7.0/include/QtCore -I/usr/local/arm/5.4.0/usr/arm-none-linux-gnueabi/include/c++/5.4.0 -I/usr/local/arm/5.4.0/usr/arm-none-linux-gnueabi/include/c++/5.4.0/arm-none-linux-gnueabi -I/usr/local/arm/5.4.0/usr/arm-none-linux-gnueabi/include/c++/5.4.0/backward -I/usr/local/arm/5.4.0/usr/lib/gcc/arm-none-linux-gnueabi/5.4.0/include -I/usr/local/arm/5.4.0/usr/lib/gcc/arm-none-linux-gnueabi/5.4.0/include-fixed -I/usr/local/arm/5.4.0/usr/arm-none-linux-gnueabi/include -I/usr/local/arm/5.4.0/usr/arm-none-linux-gnueabi/sysroot/usr/include mainwindow.h -o moc_mainwindow.cpp
 
 moc_opendoorbar.cpp: /usr/local/Qt-Embedded-5.7.0/include/QtCore/QObject \
 		/usr/local/Qt-Embedded-5.7.0/include/QtCore/qobject.h \
@@ -989,7 +989,7 @@ moc_opendoorbar.cpp: /usr/local/Qt-Embedded-5.7.0/include/QtCore/QObject \
 		/usr/local/Qt-Embedded-5.7.0/include/QtCore/qobject_impl.h \
 		opendoorbar.h \
 		/usr/local/Qt-Embedded-5.7.0/bin/moc
-	/usr/local/Qt-Embedded-5.7.0/bin/moc $(DEFINES) -I/usr/local/Qt-Embedded-5.7.0/mkspecs/linux-arm-gnueabi-g++ -I/mnt/hgfs/share/parking/entrance -I/mnt/hgfs/share/parking/entrance/include -I/usr/local/Qt-Embedded-5.7.0/include -I/usr/local/Qt-Embedded-5.7.0/include/QtWidgets -I/usr/local/Qt-Embedded-5.7.0/include/QtGui -I/usr/local/Qt-Embedded-5.7.0/include/QtNetwork -I/usr/local/Qt-Embedded-5.7.0/include/QtSerialPort -I/usr/local/Qt-Embedded-5.7.0/include/QtCore -I/usr/local/arm/5.4.0/usr/arm-none-linux-gnueabi/include/c++/5.4.0 -I/usr/local/arm/5.4.0/usr/arm-none-linux-gnueabi/include/c++/5.4.0/arm-none-linux-gnueabi -I/usr/local/arm/5.4.0/usr/arm-none-linux-gnueabi/include/c++/5.4.0/backward -I/usr/local/arm/5.4.0/usr/lib/gcc/arm-none-linux-gnueabi/5.4.0/include -I/usr/local/arm/5.4.0/usr/lib/gcc/arm-none-linux-gnueabi/5.4.0/include-fixed -I/usr/local/arm/5.4.0/usr/arm-none-linux-gnueabi/include -I/usr/local/arm/5.4.0/usr/arm-none-linux-gnueabi/sysroot/usr/include opendoorbar.h -o moc_opendoorbar.cpp
+	/usr/local/Qt-Embedded-5.7.0/bin/moc $(DEFINES) -I/usr/local/Qt-Embedded-5.7.0/mkspecs/linux-arm-gnueabi-g++ -I/mnt/hgfs/share/entrance -I/mnt/hgfs/share/entrance/include -I/usr/local/Qt-Embedded-5.7.0/include -I/usr/local/Qt-Embedded-5.7.0/include/QtWidgets -I/usr/local/Qt-Embedded-5.7.0/include/QtGui -I/usr/local/Qt-Embedded-5.7.0/include/QtNetwork -I/usr/local/Qt-Embedded-5.7.0/include/QtSerialPort -I/usr/local/Qt-Embedded-5.7.0/include/QtCore -I/usr/local/arm/5.4.0/usr/arm-none-linux-gnueabi/include/c++/5.4.0 -I/usr/local/arm/5.4.0/usr/arm-none-linux-gnueabi/include/c++/5.4.0/arm-none-linux-gnueabi -I/usr/local/arm/5.4.0/usr/arm-none-linux-gnueabi/include/c++/5.4.0/backward -I/usr/local/arm/5.4.0/usr/lib/gcc/arm-none-linux-gnueabi/5.4.0/include -I/usr/local/arm/5.4.0/usr/lib/gcc/arm-none-linux-gnueabi/5.4.0/include-fixed -I/usr/local/arm/5.4.0/usr/arm-none-linux-gnueabi/include -I/usr/local/arm/5.4.0/usr/arm-none-linux-gnueabi/sysroot/usr/include opendoorbar.h -o moc_opendoorbar.cpp
 
 moc_http_client.cpp: /usr/local/Qt-Embedded-5.7.0/include/QtCore/QDebug \
 		/usr/local/Qt-Embedded-5.7.0/include/QtCore/qdebug.h \
@@ -1089,7 +1089,7 @@ moc_http_client.cpp: /usr/local/Qt-Embedded-5.7.0/include/QtCore/QDebug \
 		/usr/local/Qt-Embedded-5.7.0/include/QtCore/qurlquery.h \
 		http_client.hpp \
 		/usr/local/Qt-Embedded-5.7.0/bin/moc
-	/usr/local/Qt-Embedded-5.7.0/bin/moc $(DEFINES) -I/usr/local/Qt-Embedded-5.7.0/mkspecs/linux-arm-gnueabi-g++ -I/mnt/hgfs/share/parking/entrance -I/mnt/hgfs/share/parking/entrance/include -I/usr/local/Qt-Embedded-5.7.0/include -I/usr/local/Qt-Embedded-5.7.0/include/QtWidgets -I/usr/local/Qt-Embedded-5.7.0/include/QtGui -I/usr/local/Qt-Embedded-5.7.0/include/QtNetwork -I/usr/local/Qt-Embedded-5.7.0/include/QtSerialPort -I/usr/local/Qt-Embedded-5.7.0/include/QtCore -I/usr/local/arm/5.4.0/usr/arm-none-linux-gnueabi/include/c++/5.4.0 -I/usr/local/arm/5.4.0/usr/arm-none-linux-gnueabi/include/c++/5.4.0/arm-none-linux-gnueabi -I/usr/local/arm/5.4.0/usr/arm-none-linux-gnueabi/include/c++/5.4.0/backward -I/usr/local/arm/5.4.0/usr/lib/gcc/arm-none-linux-gnueabi/5.4.0/include -I/usr/local/arm/5.4.0/usr/lib/gcc/arm-none-linux-gnueabi/5.4.0/include-fixed -I/usr/local/arm/5.4.0/usr/arm-none-linux-gnueabi/include -I/usr/local/arm/5.4.0/usr/arm-none-linux-gnueabi/sysroot/usr/include http_client.hpp -o moc_http_client.cpp
+	/usr/local/Qt-Embedded-5.7.0/bin/moc $(DEFINES) -I/usr/local/Qt-Embedded-5.7.0/mkspecs/linux-arm-gnueabi-g++ -I/mnt/hgfs/share/entrance -I/mnt/hgfs/share/entrance/include -I/usr/local/Qt-Embedded-5.7.0/include -I/usr/local/Qt-Embedded-5.7.0/include/QtWidgets -I/usr/local/Qt-Embedded-5.7.0/include/QtGui -I/usr/local/Qt-Embedded-5.7.0/include/QtNetwork -I/usr/local/Qt-Embedded-5.7.0/include/QtSerialPort -I/usr/local/Qt-Embedded-5.7.0/include/QtCore -I/usr/local/arm/5.4.0/usr/arm-none-linux-gnueabi/include/c++/5.4.0 -I/usr/local/arm/5.4.0/usr/arm-none-linux-gnueabi/include/c++/5.4.0/arm-none-linux-gnueabi -I/usr/local/arm/5.4.0/usr/arm-none-linux-gnueabi/include/c++/5.4.0/backward -I/usr/local/arm/5.4.0/usr/lib/gcc/arm-none-linux-gnueabi/5.4.0/include -I/usr/local/arm/5.4.0/usr/lib/gcc/arm-none-linux-gnueabi/5.4.0/include-fixed -I/usr/local/arm/5.4.0/usr/arm-none-linux-gnueabi/include -I/usr/local/arm/5.4.0/usr/arm-none-linux-gnueabi/sysroot/usr/include http_client.hpp -o moc_http_client.cpp
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
@@ -1768,7 +1768,9 @@ mainwindow.o: mainwindow.cpp mainwindow.h \
 		/usr/local/Qt-Embedded-5.7.0/include/QtGui/QPainter \
 		/usr/local/Qt-Embedded-5.7.0/include/QtGui/qpainter.h \
 		/usr/local/Qt-Embedded-5.7.0/include/QtGui/qtextoption.h \
-		/usr/local/Qt-Embedded-5.7.0/include/QtGui/qpen.h
+		/usr/local/Qt-Embedded-5.7.0/include/QtGui/qpen.h \
+		/usr/local/Qt-Embedded-5.7.0/include/QtCore/QProcess \
+		/usr/local/Qt-Embedded-5.7.0/include/QtCore/qprocess.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o mainwindow.cpp
 
 mycamera.o: mycamera.cpp mycamera.h \

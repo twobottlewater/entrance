@@ -41,7 +41,7 @@ FORMS += \
 INCLUDEPATH += ./include
 
 # 添加库文件路径和库名
-LIBS += -L. -ljpeg
+LIBS += -L./include -ljpeg
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
